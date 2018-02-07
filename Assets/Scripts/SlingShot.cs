@@ -26,9 +26,10 @@ public class SlingShot : MonoBehaviour
             return;
 
         Vector2 mousePos2D = Input.mousePosition;
-        
         Vector3 mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
         mousePos3D.z = launchPoint.transform.position.z;
+
+
         Vector3 mouseDelta = mousePos3D - launchPos;
         float maxMagnitude = GetComponent<SphereCollider>().radius;
         if (mouseDelta.magnitude > maxMagnitude)
@@ -43,6 +44,7 @@ public class SlingShot : MonoBehaviour
             aimingMode = false;
             projectile.GetComponent<Rigidbody>().isKinematic = false;
             projectile.GetComponent<Rigidbody>().velocity = -mouseDelta * velocityMult;
+            FollowCam.s.poi = projectile;
             projectile = null;
         }
     }
