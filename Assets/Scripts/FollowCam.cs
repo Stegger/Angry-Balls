@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowCam : MonoBehaviour {
+public class FollowCam : MonoBehaviour
+{
 
     public static FollowCam s;
     public GameObject poi;
@@ -10,24 +11,36 @@ public class FollowCam : MonoBehaviour {
     public Vector2 minXY;
     private float camZ;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         s = this;
         camZ = this.transform.position.z;
-	}
-	
-	// Update is called once per frame
-	private void FixedUpdate ()
-    {
-        if (poi == null)
-            return;
+    }
 
-        Vector3 destination = poi.transform.position;
+    // Update is called once per frame
+    private void FixedUpdate()
+    {
+        Vector3 destination;
+        if (poi == null)
+            destination = Vector3.zero;
+        else
+        {
+            destination = poi.transform.position;
+            if(poi.tag == "Projectile")
+            {
+                if(poi.GetComponent<Rigidbody>().IsSleeping())
+                {
+                    poi = null;
+                    return;
+                }
+            }
+        }
         destination.x = Mathf.Max(minXY.x, destination.x);
         destination.y = Mathf.Max(minXY.y, destination.y);
         destination.z = camZ;
         destination = Vector3.Lerp(transform.position, destination, easing);
         transform.position = destination;
-        GetComponent<Camera>().orthographicSize = destination.y + 10;    
-	}
+        GetComponent<Camera>().orthographicSize = destination.y + 10;
+    }
 }
