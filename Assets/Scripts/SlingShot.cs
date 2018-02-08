@@ -48,6 +48,7 @@ public class SlingShot : MonoBehaviour
             projectile.GetComponent<Rigidbody>().velocity = -mouseDelta * velocityMult;
             FollowCam.s.poi = projectile;
             projectile = null;
+            MissionDemolition.shotFired();
         }
     }
 
