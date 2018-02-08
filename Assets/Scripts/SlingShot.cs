@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class SlingShot : MonoBehaviour
 {
+    public static SlingShot S;
     public GameObject prefabProjectile;
     public float velocityMult = 4f;
+    public GameObject launchPoint;
 
-    private GameObject launchPoint;
     private Vector3 launchPos;
     private GameObject projectile;
     private bool aimingMode;
 
     private void Awake()
     {
+        S = this;
         Transform launchPointTransform = transform.Find("LaunchPoint");
         launchPoint = launchPointTransform.gameObject;
         launchPoint.SetActive(false);
