@@ -11,8 +11,7 @@ public class FollowCam : MonoBehaviour
     public Vector2 minXY;
     private float camZ;
 
-    // Use this for initialization
-    void Start()
+    private void Awake()
     {
         s = this;
         camZ = this.transform.position.z;

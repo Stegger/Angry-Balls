@@ -443,7 +443,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &970884679
 AudioListener:
@@ -544,10 +544,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castles:
+  - {fileID: 1874589769540666, guid: 26236d5f4a65a1c4a838cc58992e6786, type: 2}
   - {fileID: 1874589769540666, guid: d487b0e2e2b14d34cbc5da717054c336, type: 2}
   gtLevel: {fileID: 1754521665}
   gtScore: {fileID: 1891028267}
   castlePos: {x: 50, y: -9.5, z: 0}
+  ViewBoth: {fileID: 1823056064}
 --- !u!1 &1062246867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1102,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1891028265
 GameObject:
