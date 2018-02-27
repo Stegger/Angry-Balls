@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabProjectile: {fileID: 1604145628137646, guid: 2b82f4580e6ba7b4483e21b1ee3d8905,
     type: 2}
-  velocityMult: 10
+  velocityMult: 15
   launchPoint: {fileID: 0}
 --- !u!1 &325045987
 GameObject:
@@ -549,7 +549,6 @@ MonoBehaviour:
   gtLevel: {fileID: 1754521665}
   gtScore: {fileID: 1891028267}
   castlePos: {x: 50, y: -9.5, z: 0}
-  ViewBoth: {fileID: 1823056064}
 --- !u!1 &1062246867
 GameObject:
   m_ObjectHideFlags: 0
